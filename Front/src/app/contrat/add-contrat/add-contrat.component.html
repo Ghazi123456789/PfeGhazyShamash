@@ -1,0 +1,474 @@
+<div class="dashboard-ecommerce">
+    <div class="container-fluid dashboard-content ">
+        <!-- ============================================================== -->
+        <!-- pageheader  -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Nouveau Contrat </h2>
+                    <div class="page-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                         
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end pageheader  -->
+        <!-- ============================================================== -->
+        <div class="row">
+          
+            <div class="offset-xl-1 col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="accrodion-regular">
+                    <div id="accordion3">
+                        <div class="card">
+                            <div class="card-header" id="headingSeven">
+                                <h5 class="mb-0">
+                                   <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                     <span class="fas fa-angle-down mr-3"></span>Infos generales
+                                   </button>
+                                  </h5>
+                            </div>
+                            <div id="collapseSeven" class="collapse show" aria-labelledby="headingSeven" data-parent="#accordion3" >
+                                <div class="card-body">
+                                    <div class="row">
+                    
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="mb-0">Infos generales</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate="">
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Numero contrat Papier</label>
+                                                                <input type="text" class="form-control" name="numeroContart" id="numeroContart" [(ngModel)]="contrat.numeroContart" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Numero contrat Papier is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="country">status contrat</label>
+                                                                <select class="custom-select d-block w-100" name="periode" name="statusContrat" id="statusContrat" [(ngModel)]="contrat.statusContrat"  >
+                                                                    <option value="" [disabled]="true" >Choose...</option>
+                                                                    <option>annule</option>
+                                                                    
+                                                                </select>
+                                                                <div class="invalid-feedback">
+                                                                    Please select a valid country.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Nom d'adherent</label>
+                                                                <input type="text" class="form-control" name="nomAdherent" id="nomAdherent" [(ngModel)]="contrat.nomAdherent"  placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Nom d'adherent is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Date signature</label>
+                                                                <input type="date" class="form-control" name="dateSignature" id="dateSignature" [(ngModel)]="contrat.dateSignature" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Date signature is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Date Demarrage</label>
+                                                                <input type="date" class="form-control" name="dateDemarrage" id="dateDemarrage" [(ngModel)]="contrat.dateDemarrage" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Date Demarrage is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="mb-0">Infos generales</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate="">
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="country">type contrat</label>
+                                                                <select class="custom-select d-block w-100" name="periode" name="typeContract" id="typeContract" [(ngModel)]="contrat.typeContract" >
+                                                                    <option value="" [disabled]="true" >Choose...</option>
+                                                                    <option>annule</option>
+                                                                    
+                                                                </select>
+                                                                <div class="invalid-feedback">
+                                                                    Please select a valid country.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="country">Devise</label>
+                                                                <select class="custom-select d-block w-100" name="periode" name="devise" id="devise" [(ngModel)]="contrat.devise" >
+                                                                    <option value="" [disabled]="true" >Choose...</option>
+                                                                    <option>TND</option>
+                                                                    <option>EUR</option>
+                                                                    <option>USD</option>
+                                                                </select>
+                                                                <div class="invalid-feedback">
+                                                                    Devise id required
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Date de realisation</label>
+                                                                <input type="date" class="form-control" name="dateRealisation" id="dateRealisation" [(ngModel)]="contrat.dateRealisation" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Date de realisation is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Date de prochaine revision</label>
+                                                                <input type="date" class="form-control" name="datePrRevesion" id="datePrRevesion" [(ngModel)]="contrat.datePrRevesion" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Date de prochaine revision is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="mb-0">Infos generales</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate="">
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Chiffre d'affaires</label>
+                                                                <input type="text" class="form-control"  name="chiffreAffaire" id="chiffreAffaire" [(ngModel)]="contrat.chiffreAffaire">
+                                                                <div class="invalid-feedback">
+                                                                    Chiffre d'affaires is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Montant</label>
+                                                                <input type="text" class="form-control" name="montant" id="montant" [(ngModel)]="contrat.montant">
+                                                                <div class="invalid-feedback">
+                                                                    Montant is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Nbr Factures</label>
+                                                                <input type="text" class="form-control" name="nbrFacture" id="nbrFacture" [(ngModel)]="contrat.nbrFacture">
+                                                                <div class="invalid-feedback">
+                                                                    Nom d'adherent is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Assureur</label>
+                                                                <input type="text" class="form-control" name="assureur" id="assureur" [(ngModel)]="contrat.assureur">
+                                                                <div class="invalid-feedback">
+                                                                    Assureur is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Prime d'assurance</label>
+                                                                <input type="text" class="form-control"  name="primeAssurance" id="primeAssurance" [(ngModel)]="contrat.primeAssurance">
+                                                                <div class="invalid-feedback">
+                                                                    Prime is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2">
+                            <div class="card-header" id="headingEight">
+                                <h5 class="mb-0">
+                                   <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                     <span class="fas fa-angle-down mr-3"></span>Autres comm et frais
+                                 </button>       </h5>
+                            </div>
+                            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion3">
+                                <div class="card-body">
+                                    <div class="row">
+                    
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="mb-0">Autres comm et frais</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate="">
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Opinion</label>
+                                                                <input type="text" class="form-control"  name="opnion" id="opnion" [(ngModel)]="contrat.opnion">
+                                                                <div class="invalid-feedback">
+                                                                    Opinion is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Renouvellement</label>
+                                                                <input type="text" class="form-control" name="renouvellement" id="renouvellement" [(ngModel)]="contrat.renouvellement">
+                                                                <div class="invalid-feedback">
+                                                                    Renouvellement is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                     
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="mb-0">Autres comm et frais</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate="">
+                                                      
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Cheque</label>
+                                                                <input type="text" class="form-control"  name="cheque" id="cheque" [(ngModel)]="contrat.cheque" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Cheque is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Traite</label>
+                                                                <input type="text" class="form-control" name="traite" id="traite" [(ngModel)]="contrat.traite" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Traite is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Virement</label>
+                                                                <input type="text" class="form-control" name="virement" id="virement" [(ngModel)]="contrat.virement" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Virement is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="mb-0">Autres comm et frais</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate="">
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Timbre</label>
+                                                                <input type="text" class="form-control" name="timbre" id="timbre" [(ngModel)]="contrat.timbre" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Timbre is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Impaye</label>
+                                                                <input type="text" class="form-control" name="impaye" id="impaye" [(ngModel)]="contrat.impaye" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Impaye is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                     
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-2">
+                            <div class="card-header" id="headingNine">
+                                <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                      <span class="fas fa-angle-down mr-3"></span>Financement & Acheteur
+                                 </button>
+                                           </h5>
+                            </div>
+                            <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion3">
+                                <div class="card-body">
+                                    <div class="row">
+                    
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="mb-0">Financement & Acheteur</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate="">
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Montant de limite de financement</label>
+                                                                <input type="text" class="form-control" name="montantLimiteFinancement" id="montantLimiteFinancement" [(ngModel)]="contrat.montantLimiteFinancement" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Montant is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Commision de factoring</label>
+                                                                <input type="text" class="form-control" name="commisionFactring" id="commisionFactring" [(ngModel)]="contrat.commisionFactring" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Montant is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Delai</label>
+                                                                <input type="text" class="form-control"  name="delai" id="delai" [(ngModel)]="contrat.delai" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Delait is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="mb-0">Financement & Acheteur</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate="">
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Montant de limite de credit</label>
+                                                                <input type="text" class="form-control"  name="montantLimiteCredit" id="montantLimiteCredit" [(ngModel)]="contrat.montantLimiteCredit" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Montant de limite de credit required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="country">Mode payement</label>
+                                                                <select class="custom-select d-block w-100"   name="modePayement" id="modePayement" [(ngModel)]="contrat.modePayement" >
+                                                                    <option value="" [disabled]="true" >Choose...</option>
+                                                                    <option>Cheque</option>
+                                                                    <option>Cache</option>
+                                                                    <option>Transaction</option>
+                                                                </select>
+                                                                <div class="invalid-feedback">
+                                                                    Please select a valid Mode payement.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="mb-0">Financement & Acheteur</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate="">
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Date de limite de credit</label>
+                                                                <input type="date" class="form-control"  name="dateLimiteCredit" id="dateLimiteCredit" [(ngModel)]="contrat.dateLimiteCredit" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Date de limite de credit is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Date de limite de financement</label>
+                                                                <input type="date" class="form-control" name="dateLimiteFinancement"  name="dateLimiteFinancement" id="dateLimiteFinancement" [(ngModel)]="contrat.dateLimiteFinancement" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Date de financement de credit is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                                          </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="offset-xl-1 col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="accrodion-regular">
+                    <div id="accordion3">
+                        <div class="card">
+                            <div class="card-header" id="headingSeven">
+                                <a (click)="updateContrat()" class="btn btn-primary btn-block">Enregistre</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- end footer -->
+    <!-- ============================================================== -->
+</div>

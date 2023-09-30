@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Register</title>
+   
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    </style>
+</head>
+<!-- ============================================================== -->
+<!-- signup form  -->
+<!-- ============================================================== -->
+
+<body>
+    <!-- ============================================================== -->
+    <!-- signup form  -->
+    <!-- ============================================================== -->
+    <form class="splash-container" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-1">Registrations Form</h3>
+                <p>Please enter your user information.</p>
+                <p style="color: red;" *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+            </div>
+            <div class="card-body">
+                <div *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched">
+                    <div style="color: red;" *ngIf="registerForm.controls['name'].errors?.['required']">Name is required.</div>
+                  </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" formControlName="name" type="text" name="name" required="" placeholder="Nom et prenom" autocomplete="off">
+                </div>
+             
+                <div *ngIf="registerForm.controls['name'].invalid && registerForm.controls['username'].touched">
+                    <div style="color: red;" *ngIf="registerForm.controls['username'].errors?.['required']">Username is required.</div>
+                  </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" formControlName="username" type="text" name="nick" required="" placeholder="Username" autocomplete="off">
+                </div>
+
+                <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">
+                    <div style="color: red;" *ngIf="registerForm.controls['email'].errors?.['required']">Email is required.</div>
+                    <div style="color: red;" *ngIf="registerForm.controls['email'].errors?.['email']">Invalid email format.</div>
+                  </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" formControlName="email" type="email" name="email" required="" placeholder="E-mail" autocomplete="off">
+                </div>
+
+                <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+                    <div  style="color: red;" *ngIf="registerForm.controls['password'].errors?.['required']">Password is required.</div>
+                    <div style="color: red;" *ngIf="registerForm.controls['password'].errors?.['minlength']">Password must be at least 6 characters long.</div>
+                  </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" formControlName="password" id="pass1" type="password" required="" placeholder="Password">
+                </div>
+                <div *ngIf="registerForm.controls['cin'].invalid && registerForm.controls['cin'].touched">
+                    <div  style="color: red;" *ngIf="registerForm.controls['cin'].errors?.['cin']">cin is required.</div>
+                    <div style="color: red;" *ngIf="registerForm.controls['cin'].errors?.['minlength']">cin must be at least 8 number.</div>
+                    <div style="color: red;" *ngIf="registerForm.controls['cin'].errors?.['maxlength']">cin must be at max 8 number.</div>
+                  </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" formControlName="cin" id="pasz1" type="text" required="" placeholder="CIN">
+                </div>
+
+                <div *ngIf="registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched">
+                    <div  style="color: red;" *ngIf="registerForm.controls['phone'].errors?.['phone']">phone is required.</div>
+                    <div style="color: red;" *ngIf="registerForm.controls['phone'].errors?.['minlength']">phone must be at least 8 number.</div>
+                    <div style="color: red;" *ngIf="registerForm.controls['phone'].errors?.['maxlength']">phone must be at max 8 number.</div>
+                  </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" formControlName="phone" id="phone" type="text" required="" placeholder="Numero Tel">
+                </div>
+
+                <div *ngIf="registerForm.controls['description'].invalid && registerForm.controls['description'].touched">
+                    <div  style="color: red;" *ngIf="registerForm.controls['description'].errors?.['required']">Description is required.</div>
+                  </div>
+                <div class="form-group" >
+                    <div>
+                        <textarea required="" class="form-control" formControlName="description" placeholder="Description" name="description" ></textarea>
+                    </div>
+                </div>
+                <div class="form-group pt-2">
+                    <button class="btn btn-block btn-primary" type="submit">Register My Account</button>
+                </div>
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox"><span class="custom-control-label">By creating an account, you agree the <a href="#">terms and conditions</a></span>
+                    </label>
+                </div>
+        
+            </div>
+            <div class="card-footer bg-white">
+                <p>Already member? <a href="#" class="text-secondary">Login Here.</a></p>
+            </div>
+        </div>
+    </form>
+</body>
+
+ 
+</html>

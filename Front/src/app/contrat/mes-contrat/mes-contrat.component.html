@@ -1,0 +1,126 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="section-block">
+            <h3 class="section-title">Mes Contrats</h3>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12" *ngFor="let contrat of contrats">
+        <div class="card campaign-card text-center">
+            <span class="badge badge-danger" *ngIf="contrat.etat === false">Refuse</span>
+            <span class="badge badge-warning" *ngIf="contrat.etat === null">An attand</span>
+            <span class="badge badge-success"  *ngIf="contrat.etat === true">Accepter</span>
+            <div class="card-body">
+                <div class="campaign-img"><img src="assets/images/dribbble.png" alt="user" class="user-avatar-xl"></div>
+                    <div class="campaign-info">
+                        <h3 class="mb-1">numero : {{contrat.numeroContart}}</h3>
+                        <p class="mb-3">adherent : {{contrat.nomAdherent}}</p>
+                        <p class="mb-1">date Realisation :<span class="text-dark font-medium ml-2">{{contrat.dateRealisation}}</span></p>
+                        <p class="mb-1">date Signature :<span class="text-dark font-medium ml-2">{{contrat.dateSignature}}</span></p>
+
+                        <p>Montant: <span class="text-dark font-medium ml-2">{{contrat.montant}} {{contrat.devise}}</span></p>
+                        <a  class="btn btn-light active" data-toggle="modal" data-target="#exampleModal" (click)=" getOne(contrat)">ouvrir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                </div>
+
+
+                <div class="">
+                 
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </a>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="card">
+                                        <div class="card-header p-4" >
+                                             <a class="pt-2 d-inline-block" href="index.html">Concept</a>
+                                           
+                                            <div class="float-right"> <h3 class="mb-0">Contrat #{{c.numeroContart}}</h3>
+                                            Date: {{c.dateRealisation}}</div>
+                                        </div>
+                                        <div class="card-body" id="specific-div">
+                                            <div class="row mb-4">
+                                                <div class="col-sm-6">
+                                                    <h5 class="mb-3">From:</h5>                                            
+                                                    <h3 class="text-dark mb-1">{{c.assureur}}</h3>
+                                                 
+                                                    <div>{{c.nomAdherent}}</div>
+                                                    <div>{{c.numeroContart}}</div>
+                                                    <div>{{c.delai}}</div>
+                                                    <div>{{c.dateRealisation}}</div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <h5 class="mb-3"></h5>
+                                                    <h3 class="text-dark mb-1"></h3>                                            
+                                                    <div>{{c.timbre}}</div>
+                                                    <div>{{c.virement}}</div>
+                                                    <div>{{c.montantLimiteCredit}}</div>
+                                                    <div>{{c.dateSignature}}</div>
+                                                </div>
+                                            </div>
+                                         
+                                            Ce contrat de financement est conclu entre Shamash Factoring, une société de financement enregistrée à Centre urbain nord rue 78 immeuble 4, ci-après désignée comme le "Cessionnaire", et les utilisateurs de l'application Shamash factoring, ci-après désignés comme les "Cédants".
+
+                                            1. Objet du Contrat
+                                            
+                                            Le présent Contrat établit les termes et les conditions auxquels les Cédants cèdent leurs créances clients au Cessionnaire en échange de financement.
+                                            
+                                            2. Créances Cédées
+                                            
+                                            Les Cédants cèdent au Cessionnaire certaines créances spécifiques issues de transactions commerciales avec leurs clients.
+                                            
+                                            3. Avance Financière
+                                            
+                                            Le Cessionnaire s'engage à fournir aux Cédants un financement équivalent à un pourcentage convenu du montant total des créances cédées.
+                                            
+                                            4. Frais et Commission
+                                            
+                                            En contrepartie de ses services, le Cessionnaire percevra une commission sur les paiements reçus des clients. Des frais de gestion pourront également être facturés.
+                                            
+                                            5. Gestion des Créances
+                                            
+                                            Le Cessionnaire prendra en charge la gestion des créances cédées, y compris le suivi des paiements et les relances en cas de retard.
+                                            
+                                            6. Durée du Contrat
+                                            
+                                            Le présent Contrat entrera en vigueur à la date de signature et restera en vigueur pendant une période spécifiée, sauf résiliation anticipée conformément à la Section 7.
+                                            
+                                            7. Résiliation
+                                            
+                                            Chaque partie peut résilier le Contrat en fournissant un préavis écrit à l'autre partie conformément aux termes spécifiés.
+                                            
+                                            8. Confidentialité
+                                            
+                                            Les parties s'engagent à traiter toutes les informations confidentielles échangées dans le cadre de ce Contrat avec le plus grand soin et à ne pas les divulguer à des tiers sans consentement.
+                                            
+                                            9. Loi Applicable et Juridiction
+                                            
+                                            Ce Contrat est régi par les lois de [Juridiction]. Tout litige découlant de ce Contrat sera soumis à la juridiction exclusive des tribunaux de [Juridiction].
+                                            
+                                            En témoignage de quoi, les parties ont dûment exécuté ce Contrat à la date ci-dessous.
+                                            
+                                            Pour Shamash : Pour Shamash factoring :
+                                            <br> Date : _________________ 
+                                            <br>
+                                            Signature : _________________ Signature : _________________
+                                        </div>
+                                      
+                                    </div>           
+                                    <a   class="btn btn-success active" (click)="changeContratState(c.id,'true')" data-dismiss="modal">Accepter</a>
+                                    <a   class="btn btn-danger active" (click)="changeContratState(c.id,'false')" data-dismiss="modal">Refuse</a>
+                                    <a class="btn btn-light active" (click)="printSpecificDiv()">Print</a>                     </div>
+                                <div class="modal-footer">
+                                    <a  class="btn btn-secondary" data-dismiss="modal">Close</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

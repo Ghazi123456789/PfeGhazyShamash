@@ -1,0 +1,236 @@
+<div class="dashboard-ecommerce">
+    <div class="container-fluid dashboard-content ">
+        <!-- ============================================================== -->
+        <!-- pageheader  -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Nouvelle demande de factorisation </h2>
+                    <div class="page-breadcrumb">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end pageheader  -->
+        <!-- ============================================================== -->
+        <div class="card-body border-top" *ngIf="this.sh1 == true">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Holy guacamole!</strong> Un erreur se produit merci de verifier votre informations .
+                <a  (click)="showdang()" class="close" data-dismiss="alert" aria-label="Close">
+                            <span >×</span>
+                        </a>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="offset-xl-0 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="accrodion-regular">
+                    <div id="accordion3">
+                     
+                        <div class="card mb-2" >
+                            <div class="card-header" id="headingEight">
+                                <h5 class="mb-0">
+                                   <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                     <span class="fas fa-angle-down mr-3"></span>Indevedu information
+                                 </button>       </h5>
+                            </div>
+                            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion3">
+                                <div class="card-body" style="background-color: #efeff6;">
+                                    <app-indevedu [but]="true"></app-indevedu>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingSeven">
+                                <h5 class="mb-0">
+                                   <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                     <span class="fas mr-3 fa-angle-up"></span>Factrisation information
+                                   </button>
+                                  </h5>
+                            </div>
+                            <div id="collapseSeven" class="collapse show" aria-labelledby="headingSeven" data-parent="#accordion3" >
+                                <div class="card-body" style="background-color: #efeff6;">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="mb-0">Information de facture</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate="">
+                                                        <h4 class="mb-3">Reponsable</h4>
+                    
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Nom de group ou d'organisation</label>
+                                                                <input type="text" class="form-control" name="nomgroup" id="nomgroup" [(ngModel)]="facture.name" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Nom de group ou d'organisation is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Nom de responsable</label>
+                                                                <input type="text" class="form-control" name="nomresp" id="nomresp" [(ngModel)]="facture.nomRespo" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Nom de contact is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">email de responsable</label>
+                                                                <input type="email" class="form-control" name="emailresp" id="emailresp" [(ngModel)]="facture.emailRespo" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    email de contact is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">telephone de responsable</label>
+                                                                <input type="text" class="form-control" name="telRespo" id="telRespo" [(ngModel)]="facture.telRespo"  placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    telephone de contact is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                  
+                                                 
+                                                        <hr class="mb-4">
+                                                        <h4 class="mb-3">Facture</h4>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="lastName">Numero de fature</label>
+                                                                <input type="text" class="form-control" name="numFacture" id="numFacture" [(ngModel)]="facture.numFacture" placeholder="" value="" required="">
+                                                                <div class="invalid-feedback">
+                                                                    Nmero de facture is required.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="cc-name">Montant Facture</label>
+                                                                <input type="text" class="form-control currency-inputmask" name="montantFacture" id="montantFacture" [(ngModel)]="facture.montantFacture" im-insert="true">
+                                                                <div class="invalid-feedback">
+                                                                    Montant is required
+                                                                </div>
+                                                            </div>
+                    
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="cc-name">Date Facture</label>
+                                                                <input type="date" class="form-control currency-inputmask" name="dateCreation" id="dateCreation" [(ngModel)]="facture.dateCreation">
+                                                                <div class="invalid-feedback">
+                                                                    Date Facture is required
+                                                                </div>
+                                                            </div>
+                    
+                                                        </div>
+                                                        
+                                                        <hr class="mb-4">
+                                                        <h4 class="mb-3">Date demande</h4>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="country">Periode Factorisation</label>
+                                                                <select class="custom-select d-block w-100" name="periode" id="periode" [(ngModel)]="facture.periode" name="langue" >
+                                                                    <option value="" [disabled]="true" >Choose...</option>
+                                                                    <option>3 moins</option>
+                                                                    <option>6 moins</option>
+                                                                    <option>12 moins</option>
+                                                                    <option>24 moins</option>
+                                                                </select>
+                                                                <div class="invalid-feedback">
+                                                                    Please select a valid country.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="cc-name">Date Debut</label>
+                                                                <input type="date" class="form-control currency-inputmask" name="debutPeriode" id="debutPeriode" [(ngModel)]="facture.debutPeriode" name="langue">
+                                                                <div class="invalid-feedback">
+                                                                    Date Debut is required
+                                                                </div>
+                                                            </div>
+                    
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="cc-name">Date Fin</label>
+                                                                <input type="date" class="form-control currency-inputmask" name="finPeriode" id="finPeriode" [(ngModel)]="facture.finPeriode">
+                                                                <div class="invalid-feedback">
+                                                                    Date fin is required
+                                                                </div>
+                                                            </div>
+                    
+                                                        </div>
+                                                        <hr class="mb-4">
+                                                        <button class="btn btn-primary btn-lg btn-block" (click)=" onSubmit()" type="submit">Envoyer demande</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4 class="d-flex justify-content-between align-items-center mb-0">
+                                                                <span class="text-muted">Documents</span>
+                                                  <span class="badge badge-secondary badge-pill">3</span>
+                                                         </h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <ul class="list-group mb-3">
+                                                        <li class="list-group-item d-flex justify-content-between" *ngFor="let f of selectedFiles">
+                                                            <div>
+                                                                <h6 class="my-0">{{f.name}}</h6>
+                                                            </div>
+                                                            <span class="text-muted">{{f.size}}Ko</span>
+                                                        </li>
+                                                   
+                                                    </ul>
+                                                    <div class="form-group">
+                                                        <label for="fileUpload">File Upload</label>
+                                                        <input type="file" class="form-control-file" id="fileUpload" name="files" multiple (change)="onFileSelect($event)">
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="text-md-right footer-links d-none d-sm-block">
+                        <a href="javascript: void(0);">About</a>
+                        <a href="javascript: void(0);">Support</a>
+                        <a href="javascript: void(0);">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end footer -->
+    <!-- ============================================================== -->
+</div>

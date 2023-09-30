@@ -1,0 +1,130 @@
+<div class="dashboard-ecommerce">
+    <div class="container-fluid dashboard-content ">
+        <!-- ============================================================== -->
+        <!-- pageheader  -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="page-header">
+                    <h2 class="pageheader-title">Mes demandes du factorisation</h2>
+                    <div class="page-breadcrumb">
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end pageheader  -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-8 col-md-8 col-sm-12 col-12">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12" *ngFor="let fact of factures">
+                        <div class="product-thumbnail">
+                            <div class="product-img-head">
+                                <div class="product-img">
+                                    <h1 class="product-title">{{fact.name}}</h1>
+                                    <h1 class="product-title">{{fact.nomRespo}}</h1>
+                                    <h1 class="product-title">{{fact.emailRespo}}</h1>
+                                    <h1 class="product-title">{{fact.telRespo}}</h1>
+                                    <h1 class="product-title">{{fact.dateCreation}}</h1>
+                                <div class="ribbons" *ngIf="fact.approved === 0"></div>
+                                <div class="ribbons bg-danger" *ngIf="fact.approved === 2"></div>
+                                <div class="ribbons badge-success" *ngIf="fact.approved === 1"></div>
+                                <div class="ribbons-text" *ngIf="fact.approved == 0">New</div>
+                                <div class="ribbons-text" *ngIf="fact.approved == 2">Refu</div>
+                                <div class="ribbons-text" *ngIf="fact.approved == 1">Accp</div>
+                                <div class=""><a  class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>
+                            </div>
+                            <div class="product-content">
+                                <div class="product-content-head">
+                                    <h3 class="product-title">{{fact.name}}</h3>
+                               
+                                    <div class="product-price">{{fact.montantFacture}} TND</div>
+                                </div>
+                                <div class="product-btn">
+                                    <a  class="btn btn-primary" (click)="getfacture(fact.id)" style="color: white;" data-toggle="modal" data-target="#exampleModal">Show detils</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+         
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="text-md-right footer-links d-none d-sm-block">
+                        <a href="javascript: void(0);">About</a>
+                        <a href="javascript: void(0);">Support</a>
+                        <a href="javascript: void(0);">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end footer -->
+    <!-- ============================================================== -->
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </a>
+            </div>
+            <div class="modal-body">
+                <div class="col-xl-12 col-lg-6 col-md-6 col-sm-12 col-12 pl-xl-0 pl-lg-0 pl-md-0 border-left m-b-30">
+                    <div class="product-details">
+                        <div class="border-bottom pb-3 mb-3">
+                            <h2 class="mb-3">{{facture.name}}</h2>
+                    
+                            <h3 class="mb-0 text-primary">{{facture.montantFacture}} TND</h3>
+                        </div>
+                        <div class="product-colors border-bottom">
+                            <h4 class="mb-3">{{facture.nomRespo}}</h4>
+                            <h4 class="mb-3">{{facture.emailRespo}}</h4>
+                            <h4 class="mb-3">{{facture.telRespo}}</h4>
+                            <h4 class="mb-3">{{facture.dateCreation}}</h4>
+                        </div>
+                        <div class="product-size border-bottom">
+                            <h4 class="mb-3">{{facture.periode}}</h4>
+                            <h4 class="mb-3">{{facture.debutPeriode}}</h4>
+                            <h4 class="mb-3">{{facture.finPeriode}}</h4>
+                        </div>
+                        files :
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex justify-content-between" *ngFor="let f of files">
+                                <div>
+                                    <h6 class="my-0">{{f.fileName}}</h6>
+                                    
+                                </div>
+                                <span class="text-muted">{{f.size}}Ko</span>
+                            </li>
+                       
+                        </ul>
+                    </div>
+                </div>            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

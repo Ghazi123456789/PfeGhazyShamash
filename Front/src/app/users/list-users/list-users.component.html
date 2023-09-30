@@ -1,0 +1,143 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+        <h5 class="card-header">Basic Table</h5>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select
+                                        name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
+                                        class="custom-select custom-select-sm form-control form-control-sm">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select> entries</label></div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input
+                                        type="search" class="form-control form-control-sm" placeholder=""
+                                        aria-controls="DataTables_Table_0"></label></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table table-striped table-bordered first dataTable" id="DataTables_Table_0"
+                                role="grid" aria-describedby="DataTables_Table_0_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0"
+                                            rowspan="1" colspan="1"
+                                            aria-label="Name: activate to sort column descending"
+                                            style="width: 171.175px;" aria-sort="ascending">Nom Complete</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                            colspan="1" aria-label="Position: activate to sort column ascending"
+                                            style="width: 287.5px;">Email</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                            colspan="1" aria-label="Office: activate to sort column ascending"
+                                            style="width: 122.425px;">Cin</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                            colspan="1" aria-label="Age: activate to sort column ascending"
+                                            style="width: 59.7625px;">roles</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                            colspan="1" aria-label="Start date: activate to sort column ascending"
+                                            style="width: 117.213px;">phoneNumber</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                            colspan="1" aria-label="Salary: activate to sort column ascending"
+                                            style="width: 97.125px;">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr role="row" class="odd" *ngFor="let user of users">
+                                        <td class="sorting_1">{{ user.name }}</td>
+                                        <td>{{ user.email }}</td>
+                                        <td>{{ user.cin }}</td>
+                                        <td>
+                                            <p *ngFor="let r of user.roles">{{r.name}} ,</p>
+                                        </td>
+                                        <td>{{ user.tel }}</td>
+                                        <td>
+                                            <span *ngIf="user.enabled == false" class="badge badge-danger" data-toggle="modal" data-target="#exampleModal" (click)="userdetails(user.id)">False</span>
+                                            <span *ngIf="user.enabled == true" class="badge badge-success">True</span>
+                                    </td>
+                                        <td>
+                                            <div class="btn-group ml-auto">
+                                                <button (click)="openuserDetails(user.id)" class="btn btn-sm btn-outline-light">Open</button>
+                                                <button class="btn btn-sm btn-outline-light" (click)="deleteUser(user.id)">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th rowspan="1" colspan="1">Nom Complete</th>
+                                        <th rowspan="1" colspan="1">Email</th>
+                                        <th rowspan="1" colspan="1">Cin</th>
+                                        <th rowspan="1" colspan="1">roles</th>
+                                        <th rowspan="1" colspan="1">phoneNumber</th>
+                                        <th rowspan="1" colspan="1">Status</th>
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                   
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User : {{user.name}}</h5>
+                <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </a>
+            </div>
+            <div class="modal-body">
+                <form  >
+
+                                       
+                            <div class="form-group">
+                                <input class="form-control form-control-lg" [disabled]="true" [(ngModel)]="user.name" type="text" name="name" required="" placeholder="Nom et prenom" autocomplete="off">
+                            </div>
+                         
+                        
+                            <div class="form-group" >
+                                <input class="form-control form-control-lg" [disabled]="true" [(ngModel)]="user.username"  type="text" name="nick" required="" placeholder="Username"  >
+                            </div>
+            
+                       
+                            <div class="form-group" >
+                                <input class="form-control form-control-lg" [disabled]="true" [(ngModel)]="user.email"  type="email" name="email" required="" placeholder="E-mail" autocomplete="off">
+                            </div>
+            
+                            <div class="form-group">
+                                <div>
+                                    <textarea required="" class="form-control" [disabled]="true" placeholder="Description" [(ngModel)]="user.description" name="description" ></textarea>
+                                </div>
+                            </div>
+                       
+                 
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                <a class="btn btn-success" (click)="activeUser()">Approve compte</a>
+            </div>
+        </div>
+    </div>
+</div>
