@@ -19,7 +19,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     CommonModule,
     EntryPointRoutingModule,
-    UsersModule
+    UsersModule,
+    
   ]
 })
 export class EntryPointModule { }

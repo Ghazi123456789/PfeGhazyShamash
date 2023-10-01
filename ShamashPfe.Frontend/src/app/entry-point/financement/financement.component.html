@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
-                    <h2 class="pageheader-title">Statistique </h2>
+                    <h3 class="pageheader-title">Statistique </h3>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                            
@@ -28,10 +28,28 @@
                         <div class="card-body">
                             <h5 class="text-muted">Nbr Factures</h5>
                             <div class="metric-value d-inline-block">
-                                <h1 class="mb-1">{{nbrFacture}}</h1>
+                                <h3 class="mb-1">{{nbrFacture}}</h3>
                             </div>
                             <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5.86%</span>
+                                <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">100%</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="metric-value d-inline-block">
+                                <h3 class="mb-1">Accepte : {{activeCountF}}</h3>
+                            </div>
+                         
+                            <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                <span class="icon-circle-small icon-box-xs text-success bg-success-light bg-danger-light "><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">{{pourcentActiveF}}%</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="metric-value d-inline-block">
+                                <h3 class="mb-1">Refuse : {{inactiveCountF}}</h3>
+                            </div>
+                         
+                            <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
+                                <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">{{pourcentInActiveF}}%</span>
                             </div>
                         </div>
                     </div>
@@ -47,10 +65,28 @@
                         <div class="card-body">
                             <h5 class="text-muted">Nbr Contrats</h5>
                             <div class="metric-value d-inline-block">
-                                <h1 class="mb-1">{{nbrContrat}}</h1>
+                                <h3 class="mb-1">{{nbrContrat}}</h3>
                             </div>
                             <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
+                                <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">100%</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="metric-value d-inline-block">
+                                <h3 class="mb-1">Accepte : {{activeCountC}}</h3>
+                            </div>
+                         
+                            <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                <span class="icon-circle-small icon-box-xs text-success bg-success-light bg-danger-light "><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">{{pourcentActiveC}}%</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="metric-value d-inline-block">
+                                <h3 class="mb-1">Refuse : {{inactiveCountC}}</h3>
+                            </div>
+                         
+                            <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
+                                <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">{{pourcentInActiveC}}%</span>
                             </div>
                         </div>
                     </div>
@@ -61,34 +97,53 @@
                 <!-- ============================================================== -->
                 <!-- visitor  -->
                 <!-- ============================================================== -->
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+     <!--            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="card border-3 border-top border-top-primary">
                         <div class="card-body">
                             <h5 class="text-muted">Nbr Indevedu</h5>
                             <div class="metric-value d-inline-block">
-                                <h1 class="mb-1">{{nbrIndevedu}}</h1>
+                                <h3 class="mb-1">{{nbrIndevedu}}</h3>
                             </div>
                             <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5%</span>
+                                <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">100%</span>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!-- ============================================================== -->
                 <!-- end visitor  -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- total orders  -->
                 <!-- ============================================================== -->
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="col-xl-6 col-lg-3 col-md-6 col-sm-12 col-12">
                     <div class="card border-3 border-top border-top-primary">
                         <div class="card-body">
                             <h5 class="text-muted">nbr de utilisateur</h5>
                             <div class="metric-value d-inline-block">
-                                <h1 class="mb-1">{{nbrUser}}</h1>
+                                <h3 class="mb-1">Total : {{nbrUser}}</h3>
                             </div>
+                         
+                            <div class="metric-label d-inline-block float-right text-warning font-weight-bold">
+                                <span class="icon-circle-small icon-box-xs text-warning bg-warning-light bg-warning-light "><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">100%</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="metric-value d-inline-block">
+                                <h3 class="mb-1">Accepte : {{activeCount}}</h3>
+                            </div>
+                         
+                            <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                <span class="icon-circle-small icon-box-xs text-success bg-success-light bg-danger-light "><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">{{pourcentActive}}%</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="metric-value d-inline-block">
+                                <h3 class="mb-1">Refuse : {{inactiveCount}}</h3>
+                            </div>
+                         
                             <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
-                                <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
+                                <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">{{pourcentInActive}}%</span>
                             </div>
                         </div>
                     </div>
@@ -97,8 +152,132 @@
                 <!-- end total orders  -->
                 <!-- ============================================================== -->
             </div>
-        
             <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h3 class="pageheader-title">Statistique par utilisateur</h3>
+                        <div class="page-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                               
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <h5 class="card-header">List de nos utilisateurs</h5>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nom Complet</th>
+                                        <th scope="col">CIN</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr  *ngFor="let u of displayedData">
+                                        <th *ngIf="u.enabled === true" >{{u.name}}</th>
+                                        <td *ngIf="u.enabled === true" >{{u.cin}}</td>
+                                        <td *ngIf="u.enabled === true" >{{u.email}}</td>
+                                        <td *ngIf="u.enabled === true" ><span _ngcontent-beh-c54="" class="badge badge-success">True</span></td>
+                                        <td *ngIf="u.enabled === true" ><a (click)="getUserAllInfo(u.id)" class="btn btn-primary active">Detail</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination">
+                                <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+                                <span>{{ currentPage }} / {{ totalPages }}</span>
+                                <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+                              </div>
+                        </div>
+               
+                    </div>
+                    
+                </div>
+                <!-- ============================================================== -->
+                <!-- end earnings before interest tax  -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- cost of goods  -->
+                <!-- ============================================================== -->
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-body">
+                                <h5 class="text-muted">Nbr de demande</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h3 class="mb-1 text-primary">Total : {{nbrFF}} </h3>
+                                </div>
+                                <div class="metric-label d-inline-block float-right text-success">
+                                    <i class="fa fa-fw fa-caret-up"></i><span>100%</span>
+                                </div>
+                            </div>
+                                <div class="card-body">
+                                <div class="metric-value d-inline-block">
+                                    <h3 class="mb-1 text-primary">Accepte : {{activeCountFU}}  </h3>
+                                </div>
+                                <div class="metric-label d-inline-block float-right text-success">
+                                    <i class="fa fa-fw fa-caret-up"></i><span>{{pourcentActiveFU}}%</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="metric-value d-inline-block">
+                                    <h3 class="mb-1 text-danger"> Refuse : {{inactiveCountFU}} </h3>
+                                </div>
+                                <div class="metric-label d-inline-block float-right text-danger">
+                                    <i class="fa fa-fw fa-caret-down"></i><span>{{pourcentInActiveFU}}%</span>
+                                </div>
+                            </div>
+
+                            </div>
+                        
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Nbr de demande</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h3 class="mb-1 text-primary">Total : {{nbrCC}} </h3>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-right text-success">
+                                        <i class="fa fa-fw fa-caret-up"></i><span>100%</span>
+                                    </div>
+                                </div>
+                                    <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h3 class="mb-1 text-primary">Accepte : {{activeCountCC}} </h3>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-right text-success">
+                                        <i class="fa fa-fw fa-caret-up"></i><span>{{pourcentActiveCC}}%</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h3 class="mb-1 text-danger"> Refuse : {{inactiveCountCC}} </h3>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-right text-danger">
+                                        <i class="fa fa-fw fa-caret-down"></i><span>{{pourcentInActiveCC}}%</span>
+                                    </div>
+                                </div>
+    
+                                </div>
+                            
+                            </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end cost of goods  -->
+                <!-- ============================================================== -->
+            </div>
+
+            <div class="row">
+
+            
                 <!-- ============================================================== -->
           
                 <!-- ============================================================== -->
@@ -137,6 +316,7 @@
                                             <td *ngIf="contrat.etat === false">{{contrat.montant}}</td>
                                             <td *ngIf="contrat.etat === false">{{contrat.devise}} </td>
                                             <td *ngIf="contrat.etat === false"> <span class="badge-dot badge-brand mr-1"></span>{{contrat.etat}}  </td>
+                                            
                                        </tr>
                                 
                                     </tbody>
@@ -200,5 +380,8 @@
   
     
         </div>
+        
     </div>
+    
 </div>
+
