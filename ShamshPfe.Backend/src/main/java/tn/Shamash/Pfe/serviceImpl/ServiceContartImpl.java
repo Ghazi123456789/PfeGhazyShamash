@@ -61,7 +61,6 @@ public class ServiceContartImpl implements ServiceContart{
 		List<Contrat> lll = new ArrayList<>();
 		for (Contrat contrat : ll) {
 			if(contrat.getUser().getId() == iduser)
-				System.out.println(contrat.getUser().getId());
 				lll.add(contrat);
 		}
 	
