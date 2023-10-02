@@ -20,11 +20,13 @@ import tn.Shamash.Pfe.Repository.FactureRepository;
 import tn.Shamash.Pfe.Repository.FileRepository;
 import tn.Shamash.Pfe.Repository.IndeveuRepository;
 import tn.Shamash.Pfe.Repository.UserRepository;
+import tn.Shamash.Pfe.service.EmailService;
 import tn.Shamash.Pfe.service.FactureService;
 
 @Service
 public class ServiceFactureImpl implements FactureService{
-
+	@Autowired
+	    EmailService emailService;
 	@Autowired 
 	IndeveuRepository indeveduRepo;
 	
@@ -67,6 +69,10 @@ public class ServiceFactureImpl implements FactureService{
         facture.setAttachments(attachments);
         
         }
+        emailService.sendEmail(
+                user.getEmail(),
+                "Nouvelle demande de Factorisation",
+                "Merci pour votre Demande.\n  votre demande a besoin de consulter par l'un  nos administrateurs.Un email sa sera envoyer pour reponde a votre demande, Bienvenue ! ");
         
         return factureRepo.save(facture);
 
@@ -107,6 +113,7 @@ public class ServiceFactureImpl implements FactureService{
 			c.setUser(f.getUser());
 			contratRepo.save(c);
 			f.setContrat(c);
+			
 		}
 		return factureRepo.save(f);
 	}

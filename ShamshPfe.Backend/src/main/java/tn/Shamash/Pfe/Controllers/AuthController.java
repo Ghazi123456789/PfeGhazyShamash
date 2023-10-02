@@ -64,6 +64,8 @@ public class AuthController {
     JwtUtils jwtUtils;
     @Autowired
     RefreshTokenService refreshTokenService;
+    
+    
 
     private final ConfirmationTokenService confirmationTokenService;
     private final EmailService emailService;
@@ -153,21 +155,18 @@ public class AuthController {
         try{
             user.setRoles(roles);
             userRepository.save(user);
-            String token = UUID.randomUUID().toString();
-            confirmationMailTokenEntity confirmationMailTokenEntity =
-                    new confirmationMailTokenEntity(token, LocalDateTime.now(),LocalDateTime.now().plusHours(12),user);
-            confirmationTokenService.saveConfirmationToken(confirmationMailTokenEntity);
-            String link = "http://localhost:8020/api/auth/confirm?token=" + token;
-            emailService.sendSimpleEmail(
-                    user.getEmail(),
-                    "Please confirm your account",
-                    confirmationEmailToken.buildEmail(user.getName(), link));
+            System.out.println("emaaaaaaaaaaaaaaaaaaaaaaaaaaaaill");
+      
+          
         }
         catch (Exception e)
         {
             return ResponseEntity.badRequest().body("Error: " + e.getMessage()) ;
         }
-
+        emailService.sendEmail(
+                user.getEmail(),
+                "Creation d'un account sur Shamash Factoring",
+                "Merci pour votre inscription sur notre plateforme.\n Vous recevrez un e-mail dès que votre compte aura été validé par l'un de nos administrateurs. Nous sommes impatients de vous accueillir et de vous offrir la meilleure expérience possible sur notre site. Si vous avez des questions, n'hésitez pas à nous contacter. Bienvenue ! ");
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
 

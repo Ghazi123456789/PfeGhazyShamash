@@ -9,11 +9,12 @@ import tn.Shamash.Pfe.Entity.User;
 import tn.Shamash.Pfe.Exception.EntityNotFound;
 import tn.Shamash.Pfe.Repository.IndeveuRepository;
 import tn.Shamash.Pfe.Repository.UserRepository;
+import tn.Shamash.Pfe.service.EmailService;
 import tn.Shamash.Pfe.service.UsersInformation;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
-
+import tn.Shamash.Pfe.service.EmailService;
 @Service
 public class UserInformationImpl implements UsersInformation {
 
@@ -21,7 +22,8 @@ public class UserInformationImpl implements UsersInformation {
     UserRepository userRepository;
     @Autowired
     IndeveuRepository IndRepository;
-
+    @Autowired
+    EmailService emailService;
     @Override
     public String deleteUser(Long idUser) {
         if (idUser == null){
@@ -101,6 +103,11 @@ public class UserInformationImpl implements UsersInformation {
 		user.setIndevedu(indevedu);
 		IndRepository.save(indevedu);
 		userRepository.saveAndFlush(user);
+		  emailService.sendEmail(
+	                user.getEmail(),
+	                "Bienvenue !",
+	                "Merci pour votre inscription sur notre plateforme.\n  votre compte a été validé par  nos administrateurs. Bienvenue ! ");
+	        
 		return null;
 	}
 

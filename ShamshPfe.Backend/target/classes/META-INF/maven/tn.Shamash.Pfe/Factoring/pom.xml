@@ -8,8 +8,8 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>tn.dpc</groupId>
-	<artifactId>gestion-des-ressources-humaine</artifactId>
+	<groupId>tn.Shamash.Pfe</groupId>
+	<artifactId>Factoring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>gestion-des-ressources-humaine</name>
 	<description>plateforme pour la gestion des ressourves humaines</description>
@@ -133,15 +133,15 @@
 			<version>1.24.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.sun.mail</groupId>
-			<artifactId>javax.mail</artifactId>
-			<version>1.6.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-			<version>2.6.4</version>
-		</dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>javax.mail</artifactId>
+    <version>1.6.2</version> <!-- or the latest version available -->
+</dependency>
+		
+	<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-mail</artifactId>
+</dependency>
 		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
